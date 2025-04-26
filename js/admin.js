@@ -128,6 +128,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function updateConfirmedReservationsList() {
+        const confirmedReservationsList = document.getElementById('confirmedReservationsList');
+        if (!confirmedReservationsList) return;
+        confirmedReservationsList.innerHTML = '';
+        const confirmedReservations = adminManager.getReservations().filter(r => r.status === 'confirmed');
+        confirmedReservations.forEach(reservation => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${reservation.userEmail}</td>
+                <td>${reservation.date}</td>
+                <td>${reservation.time}</td>
+                <td>Mesa ${reservation.tableId}</td>
+                <td>${reservation.guests}</td>
+                <td>${reservation.status}</td>
+            `;
+            confirmedReservationsList.appendChild(tr);
+        });
+    }
+
     window.changeTableStatus = function(tableId, status) {
         adminManager.updateTableStatus(tableId, status);
         updateTablesList();
@@ -180,5 +199,6 @@ window.deleteTable = function(tableId) {
 
     updateTablesList();
     updateReservationsList();
+    updateConfirmedReservationsList();
     updateCounters();
 });
