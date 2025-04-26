@@ -24,6 +24,7 @@ class AdminManager {
         }
     }
     deleteTable(tableId) {
+        console.log('AdminManager.deleteTable called with tableId:', tableId);
         this.reservationManager.tables = this.reservationManager.tables.filter(t => t.id !== tableId);
         this.reservationManager.saveData();
     }
@@ -134,11 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 window.deleteTable = function(tableId) {
-    if (confirm('¿Está seguro de eliminar esta mesa?')) {
-        adminManager.deleteTable(tableId);
-        updateTablesList();
-        updateCounters();
-    }
+    console.log('deleteTable called with tableId:', tableId);
+    // Eliminado temporalmente el confirm para pruebas
+    adminManager.deleteTable(tableId);
+    console.log('Tables after deletion:', adminManager.getTables());
+    updateTablesList();
+    updateCounters();
 };
 
 
