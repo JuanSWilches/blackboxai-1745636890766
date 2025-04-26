@@ -157,7 +157,7 @@
         </div>
 
         <!-- Reservas Pendientes -->
-        <div class="bg-white shadow rounded-lg p-6">
+        <div class="bg-white shadow rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 font-poppins">Reservas Pendientes</h2>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
@@ -188,6 +188,40 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200" id="pendingReservationsList">
                         <!-- Las reservas pendientes se cargarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reservas Confirmadas -->
+        <div class="bg-white shadow rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 font-poppins">Reservas Confirmadas</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Cliente
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Fecha
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Hora
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Mesa
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Personas
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Estado
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="confirmedReservationsList">
+                        <!-- Las reservas confirmadas se cargarán dinámicamente aquí -->
                     </tbody>
                 </table>
             </div>
